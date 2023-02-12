@@ -12,3 +12,6 @@ For benchmarking *CS.scad* from [trackpoint-keycap-mods](https://github.com/wolf
 Any of the variables in the begining of the script can be overridden similarly.
 
 Note: the environment variable `OPENSCADPATH` can be used to add to the locations where `openscad` searchs for *include<>*s, which might help you avoid copying around files to ease your benchmarking effort.
+
+## Catching Regressions
+If any of the configurations crash for you, or if `--enable=fast-csg --enable=fast-csg-remesh` is slower than a plain run, open an issue with OpenSCAD: https://github.com/openscad/openscad/issues
