@@ -4,8 +4,6 @@
 
 # where's the binary?
 OPENSCAD_NIGHTLY=${OPENSCAD_NIGHTLY:=${HOME}/Downloads/OpenSCAD-2023.01.23.ai13617-x86_64.AppImage}
-#"$HOME/bugs/scad/openscad-ochafik-remesh-support/build/openscad"
-#"$HOME/downloads/OpenSCAD-2022.02.09.ai10824-2022.02.09.ai10824-x86_64.AppImage"
 
 # this is how I normally render
 OPENSCAD_ARGS=${OPENSCAD_ARGS:="-q --hardwarnings --render"}
