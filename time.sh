@@ -3,27 +3,28 @@
 #set -x
 
 # where's the binary?
-OPENSCAD_NIGHTLY="$HOME/bugs/scad/openscad-ochafik-remesh-support/build/openscad"
+OPENSCAD_NIGHTLY=${OPENSCAD_NIGHTLY:=${HOME}/Downloads/OpenSCAD-2023.01.23.ai13617-x86_64.AppImage}
+#"$HOME/bugs/scad/openscad-ochafik-remesh-support/build/openscad"
 #"$HOME/downloads/OpenSCAD-2022.02.09.ai10824-2022.02.09.ai10824-x86_64.AppImage"
 
 # this is how I normally render
-OPENSCAD_ARGS="-q --hardwarnings --render"
+OPENSCAD_ARGS=${OPENSCAD_ARGS:="-q --hardwarnings --render"}
 
 # supply some vars
-OPENSCAD_EXTRA_ARGS=""
+OPENSCAD_EXTRA_ARGS=${OPENSCAD_EXTRA_ARGS:=""}
 #'-D \$prerendered_keycaps=true -D \$disable_keycap_render=true'
 
 
 # the sets of parameters to explore
-LAZY_UNION=,--enable=lazy-union
-REMESH=,--enable=fast-csg-remesh
-FAST_CSG="--enable=fast-csg,--enable=fast-csg --enable=fast-csg-exact,--enable=fast-csg --enable=fast-csg-exact-callbacks,--enable=fast-csg --enable=fast-csg-trust-corefinement,--enable=fast-csg --enable=fast-csg-trust-corefinement --enable=fast-csg-exact,--enable=fast-csg --enable=fast-csg-trust-corefinement --enable=fast-csg-exact-callbacks"
+LAZY_UNION=${LAZY_UNION:=,--enable=lazy-union}
+REMESH=${REMESH:=,--enable=fast-csg-remesh}
+FAST_CSG=${FAST_CSG:="--enable=fast-csg,--enable=fast-csg --enable=fast-csg-exact,--enable=fast-csg --enable=fast-csg-exact-callbacks,--enable=fast-csg --enable=fast-csg-trust-corefinement,--enable=fast-csg --enable=fast-csg-trust-corefinement --enable=fast-csg-exact,--enable=fast-csg --enable=fast-csg-trust-corefinement --enable=fast-csg-exact-callbacks"}
 
 #NO_HYPE=1
-HYPER_ARGS="-m 2 -M 20"
+HYPER_ARGS=${HYPER_ARGS:="-m 2 -M 20"}
 
 # the different file possibilities
-FILES="rest thumb plate fingers assembly"
+FILES=${FILES:=""}
 
 mkdir -p things/
 
