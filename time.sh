@@ -42,12 +42,15 @@ else
 	FOO=${FAST_CSG// /%}
 	for REND in "" ${FOO//,/ }
 	do
-	    for LAZY in "" ${LAZY_UNION//,/ }
+	    for MESH in "" ${REMESH//,/ }
 	    do
-		echo " > ${FILE} ${REND//%/} ${LAZY}"
-		time "${OPENSCAD_NIGHTLY}" ${OPENSCAD_ARGS} ${OPENSCAD_EXTRA_ARGS} ${LAZY} ${REND//%/ } -o things/test_${FILE}.stl ${FILE}.scad
+		for LAZY in "" ${LAZY_UNION//,/ }
+		do
+		    echo " > ${FILE} ${REND//%/ } ${MESH} ${LAZY}"
+		    time "${OPENSCAD_NIGHTLY}" ${OPENSCAD_ARGS} ${OPENSCAD_EXTRA_ARGS} ${LAZY} ${MESH} ${REND//%/ } -o things/test_${FILE}.stl ${FILE}.scad
 
-		[ -s things/test_${FILE}.stl ] || echo "ERROR: render ${LAZY} ${REND} of ${FILE} produced empty .stl"
+		    [ -s things/test_${FILE}.stl ] || echo "ERROR: render ${LAZY} ${MESH} ${REND} of ${FILE} produced empty .stl"
+		done
 	    done
 	done
     done
