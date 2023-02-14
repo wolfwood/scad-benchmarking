@@ -16,7 +16,7 @@ OPENSCAD_EXTRA_ARGS=${OPENSCAD_EXTRA_ARGS:=""}
 # the sets of parameters to explore
 LAZY_UNION=${LAZY_UNION:=,--enable=lazy-union}
 REMESH=${REMESH:=,--enable=fast-csg-remesh}
-FAST_CSG=${FAST_CSG:="--enable=fast-csg,--enable=fast-csg --enable=fast-csg-exact,--enable=fast-csg --enable=fast-csg-exact-callbacks,--enable=fast-csg --enable=fast-csg-trust-corefinement,--enable=fast-csg --enable=fast-csg-trust-corefinement --enable=fast-csg-exact,--enable=fast-csg --enable=fast-csg-trust-corefinement --enable=fast-csg-exact-callbacks"}
+FAST_CSG=${FAST_CSG:=",--enable=fast-csg,--enable=fast-csg --enable=fast-csg-exact,--enable=fast-csg --enable=fast-csg-exact-callbacks,--enable=fast-csg --enable=fast-csg-trust-corefinement,--enable=fast-csg --enable=fast-csg-trust-corefinement --enable=fast-csg-exact,--enable=fast-csg --enable=fast-csg-trust-corefinement --enable=fast-csg-exact-callbacks"}
 
 #NO_HYPE=1
 HYPER_ARGS=${HYPER_ARGS:="-m 2 -M 20"}
@@ -40,11 +40,11 @@ else
     for FILE in ${FILES//,/ }
     do
 	FOO=${FAST_CSG// /%}
-	for REND in "" ${FOO//,/ }
+	for REND in ""${FOO//,/ }
 	do
-	    for MESH in "" ${REMESH//,/ }
+	    for MESH in ""${REMESH//,/ }
 	    do
-		for LAZY in "" ${LAZY_UNION//,/ }
+		for LAZY in ""${LAZY_UNION//,/ }
 		do
 		    echo " > ${FILE} ${REND//%/ } ${MESH} ${LAZY}"
 		    time "${OPENSCAD_NIGHTLY}" ${OPENSCAD_ARGS} ${OPENSCAD_EXTRA_ARGS} ${LAZY} ${MESH} ${REND//%/ } -o things/test_${FILE}.stl ${FILE}.scad
