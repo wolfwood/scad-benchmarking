@@ -17,7 +17,7 @@ OPENSCAD_EXTRA_ARGS=${OPENSCAD_EXTRA_ARGS:=""}
 
 # the sets of parameters to explore
 LAZY_UNION=${LAZY_UNION:=,--enable=lazy-union}
-REMESH=${REMESH:=,--enable=fast-csg-remesh}
+REMESH=${REMESH:=,--enable=fast-csg-remesh,--enable=fast-csg-remesh-predictably}
 FAST_CSG=${FAST_CSG:=",--enable=manifold,--enable=fast-csg,--enable=fast-csg --enable=fast-csg-exact,--enable=fast-csg --enable=fast-csg-exact-callbacks,--enable=fast-csg --enable=fast-csg-trust-corefinement,--enable=fast-csg --enable=fast-csg-trust-corefinement --enable=fast-csg-exact,--enable=fast-csg --enable=fast-csg-trust-corefinement --enable=fast-csg-exact-callbacks"}
 
 #NO_HYPE=1
