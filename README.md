@@ -12,5 +12,8 @@ Any of the variables in the begining of the script can be overridden similarly.
 
 Note: the environment variable `OPENSCADPATH` can be used to add to the locations where `openscad` searchs for *include<>*s, which might help you avoid copying around files to ease your benchmarking effort.
 
+## TL;DR
+for benchmarking manifold against the unmodified CGAL renderer run `OPENSCAD=<path-to-[build-from-PR-4533](https://github.com/openscad/openscad/pull/4533) FILES="<name without extension of each .scad file to benchmark>" FAST_CSG=",--enable=manifold" REMESH="" LAZY_UNION="" ../scad-benchmarking/time.sh`
+
 ## Catching Regressions
 If any of the configurations crash for you, or if `--enable=fast-csg --enable=fast-csg-remesh` is slower than a plain run, open an issue with OpenSCAD: https://github.com/openscad/openscad/issues
