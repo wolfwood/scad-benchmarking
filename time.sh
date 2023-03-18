@@ -6,7 +6,9 @@
 OPENSCAD=${OPENSCAD:=${HOME}/Downloads/OpenSCAD-2023.01.23.ai13617-x86_64.AppImage}
 
 # this is how I normally render
-OPENSCAD_ARGS=${OPENSCAD_ARGS:="-q --hardwarnings --render"}
+OPENSCAD_ARGS=${OPENSCAD_ARGS:="-q --render"}
+
+WARNINGS=${WARNINGS:=""} #--hardwarnings
 
 # supply some vars
 OPENSCAD_EXTRA_ARGS=${OPENSCAD_EXTRA_ARGS:=""}
